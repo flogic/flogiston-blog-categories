@@ -30,4 +30,14 @@ describe Category do
       @category.errors.should be_invalid(:name)
     end
   end
+  
+  describe 'associations' do
+    it 'should have many categorizations' do
+      @category.should respond_to(:categorizations)
+    end
+
+    it 'should have many articles (through categorizations)' do
+      @category.should respond_to(:articles)
+    end
+  end
 end
