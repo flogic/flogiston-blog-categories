@@ -80,4 +80,9 @@ describe 'admin/categories/index.html.haml' do
       end
     end
   end
+
+  it 'should link to create a new category' do
+    do_render
+    response.should have_tag('a[href=?]', new_admin_category_path)
+  end
 end
