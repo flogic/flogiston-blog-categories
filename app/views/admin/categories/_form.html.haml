@@ -1,0 +1,7 @@
+-form_for [:admin, category] do |f|
+  -unless f.error_messages.blank?
+    .errors= f.error_messages
+  .field
+    %label{ :for => 'category_name' } Name:
+    =f.text_field :name
+  .submit= f.submit 'Submit'

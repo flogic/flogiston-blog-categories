@@ -1,0 +1,12 @@
+%table#categories
+  %thead
+    %tr.header
+      %th name
+      %th actions
+  %tbody
+    - @categories.each do |category|
+      %tr.body
+        %td= category.name
+        %td.actions
+          = link_to 'edit', edit_admin_category_path(category)
+          = link_to 'delete', admin_category_path(category), :confirm => 'Are you sure?', :method => :delete
