@@ -1,0 +1,4 @@
+.field
+  -Category.all.each do |category|
+    =check_box_tag 'article[category_ids][]', category.id, f.object.category_ids.include?(category.id)
+    %label= category.name
