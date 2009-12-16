@@ -1,4 +1,7 @@
 .field
   -Category.all.each do |category|
-    =check_box_tag 'article[category_ids][]', category.id, f.object.category_ids.include?(category.id)
-    %label= category.name
+    -cat_id = category.id
+    -checked = f.object.category_ids.include?(cat_id)
+    -check_id = "article_category_ids_#{cat_id}"
+    =check_box_tag 'article[category_ids][]', cat_id, checked, :id => check_id
+    %label{ :for => check_id }= category.name
